@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="/">Search</a>
+      <a class="active" href="about">About</a>
+    </div>
+    <h1 style="font-family:verdana; color:green" align = "center">About</h1>
+    <div class = "Aboutme">
+      <h2>Who is the author of this project?</h2>
+      <p>My name is Anton Barash and I'm currently a junior at BU who is majoring in Computer Science. I'm happy to take any questions about the project
+        through my email at: antonbarash@gmail.com</p>
+    </div>
+    <div class = "Aboutproj">
+      <h2>What is this project?</h2>
+      <p>This project aims to find the shortest path from any Massachusetts USCF player to any other Massachusetts USCF player. The shortest path Between
+        two players is considered to be the shortest number of winning games from player 1 to player 2, for example: player 1 beat 3, 3 beat 2 is a valid
+        path from 1 to 2, and will be the shortest one if there has not been a game where 1 beat 2 themselves. My inspiration for the project was from seeing
+        the Magnus Number and Chessbase projects with the same pathfinding idea as this one.
+      </p>
+      <h2>How did you implement the project?</h2>
+      <p>I implemented the project in Python and MySQL. I first scraped all USCF rated tournaments for Massachusetts and the games within them into
+        a MySQL database, after which I extracted all the games that had results and placed them into a Python graph using the networkx module. Then
+        by using Djikstra's algorithm pathfinding algorithm inside the networkx module I was able to find the shortest path between two players, and output
+        that path accordingly. The website was made using the Django framework.</p>
+  </body>
+</html>
